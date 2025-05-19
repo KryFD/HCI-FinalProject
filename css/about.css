@@ -1,0 +1,201 @@
+@import 'global.css';
+
+.about-hero {
+    background-color: #6b46c1;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.about-hero h1, .about-hero p {
+    color: white;
+}
+
+.our-story {
+    padding: 4rem 0;
+}
+
+.our-story p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-text h2 {
+    color: #6b46c1;
+    margin-bottom: 2rem;
+}
+
+.story-text p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.story-image img {
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.vision-mission {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+}
+
+.vision-mission .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.vision, .mission {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.icon {
+    font-size: 2.5rem;
+    color: #6b46c1;
+    margin-bottom: 1rem;
+}
+
+.key-features {
+    padding: 4rem 0;
+}
+
+.key-features h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: #6b46c1;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.team-section {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+}
+
+.team-section h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 5px solid white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.team-member h3 {
+    margin-bottom: 0.25rem;
+}
+
+.position {
+    color: #a0aec0;
+}
+
+.join-cta {
+    background-color: #6b46c1;
+    color: white;
+    padding: 4rem 0;
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cta-buttons .btn-primary {
+    background-color: white;
+    color: #6b46c1;
+    border-color: white;
+}
+
+.cta-buttons .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-buttons .btn-secondary {
+    color: white;
+    border-color: white;
+}
+
+.cta-buttons .btn-secondary:hover {
+    background-color: white;
+    color: #6b46c1;
+}
+
+@media screen and (max-width: 768px) {
+    .story-content,
+    .vision-mission .container {
+        grid-template-columns: 1fr;
+    }
+}

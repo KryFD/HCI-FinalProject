@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Artwork - Picverse</title>
+    <link rel="stylesheet" href="css/submission.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">Picverse</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="submission.html" class="active">Submit</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="submission-header">
+        <div class="container">
+            <h1>Share Your Artwork</h1>
+            <p>Upload your digital creations and join our community of artists</p>
+        </div>
+    </section>
+
+    <section class="submission-form">
+        <div class="container">
+            <div class="form-container">
+                <form id="artwork-submission-form">
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Artwork Title <span class="required">*</span></label>
+                        <input type="text" id="title" name="title" required>
+                        <span class="error-message" id="title-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description <span class="required">*</span></label>
+                        <textarea id="description" name="description" rows="5" required></textarea>
+                        <span class="error-message" id="description-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tags">Tags <span class="required">*</span></label>
+                        <div class="tags-input-container">
+                            <input type="text" id="tags-input" placeholder="Add tags (press Enter after each tag)">
+                            <div class="tags-list" id="tags-list"></div>
+                            <input type="hidden" id="tags" name="tags">
+                        </div>
+                        <span class="error-message" id="tags-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="artwork-file">Upload Artwork <span class="required">*</span></label>
+                        <div class="file-upload">
+                            <input type="file" id="artwork-file" name="artwork-file" accept="image/*" required aria-describedby="file-error">
+                            <label for="artwork-file" class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i> Choose File
+                            </label>
+                            <div class="file-name" id="file-name">No file chosen</div>
+                        </div>
+                        <span class="error-message" id="file-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>AI Generated? <span class="required">*</span></label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" id="ai-yes" name="ai-generated" value="yes" required>
+                                <label for="ai-yes">Yes, this artwork is AI-generated</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="ai-no" name="ai-generated" value="no" required>
+                                <label for="ai-no">No, this is not AI-generated</label>
+                            </div>
+                        </div>
+                        <span class="error-message" id="ai-error"></span>
+                    </div>
+
+                    <div class="form-group terms">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms and Conditions</a> <span class="required">*</span></label>
+                        <span class="error-message" id="terms-error"></span>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submit-button">Submit Artwork</button>
+                        <button type="reset" class="btn btn-secondary" id="clear-button">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+            <div class="submission-guidelines">
+                <h3>Submission Guidelines</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> File format: JPG, PNG, GIF (max 10MB)</li>
+                    <li><i class="fas fa-check"></i> Minimum resolution: 1200 x 800 pixels</li>
+                    <li><i class="fas fa-check"></i> Add at least 3 tags to help others find your work</li>
+                    <li><i class="fas fa-check"></i> Include a detailed description of your artwork</li>
+                    <li><i class="fas fa-check"></i> Properly indicate if your artwork is AI-generated</li>
+                    <li><i class="fas fa-check"></i> Only submit work you own or have rights to share</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="success-modal" id="success-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-success">&times;</span>
+            <div class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h2>Submission Successful!</h2>
+                <p>Your artwork has been submitted successfully and is pending review.</p>
+                <button class="btn" id="continue-button">Continue</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Picverse</h2>
+                    <p>Connect, Create, Inspire</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="submission.html">Submit</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Picverse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/form-validation.js"></script>
+</body>
+</html>
